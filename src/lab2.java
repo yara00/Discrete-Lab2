@@ -7,6 +7,8 @@ public class lab2 {
                     "1. Sieve of Eratosthenes\n" +
                     "2. Trial Division\n" +
                     "3. Extended Euclidean\n"+
+                    "4. Chinese Remainder Theorem\n"+
+                    "5. Miller's Test\n"+
                     "6. EXIT");
 
             Scanner s = new Scanner(System.in);

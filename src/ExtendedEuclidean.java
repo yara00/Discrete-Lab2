@@ -9,10 +9,9 @@ public class ExtendedEuclidean {
             return b;
         }
 
-        int x1=1, y1=1; // To store results of recursive call
+        int x1=1, y1=1;
         int gcd = extended(b%a, a);
 
-        // Update x and y using results of recursive call
         x = y1 - (b/a) * x1;
         y = x1;
         if(done == false) {
