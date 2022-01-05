@@ -1,26 +1,30 @@
 public class ExtendedEuclidean {
-    boolean done = false;
     int extended(int a, int b) {
-        int x,y;
-        if (a == 0)
-        {
-            x = 0;
-            y = 1;
-            return b;
+        int old_s =1;
+        int new_s =0;
+        int old_t =0;
+        int new_t =1;
+        int temp, q;
+        while(b != 0) {
+            q = a / b;
+            //setting s (swap old s with new s and evaluate new s)
+            temp = new_s;
+            new_s = old_s - new_s * q;
+            old_s = temp;
+            //setting t (swap old t with new t and evaluate new t)
+            temp = new_t;
+            new_t = old_t - new_t * q;
+            old_t = temp;
+            //setting gcd
+            temp = b;
+            b = a % b;
+            a = temp;
         }
 
-        int x1=1, y1=1;
-        int gcd = extended(b%a, a);
-
-        x = y1 - (b/a) * x1;
-        y = x1;
-        if(done == false) {
-            System.out.println("s is "+x);
-            System.out.println("t is "+y);
-            done = true;
-            }
-
-        return gcd;
+        int gcd = a;
+        System.out.println("s is "+ old_s);
+        System.out.println("t is "+ old_t);
+        return  gcd;
 
     }
 }
